@@ -1,9 +1,10 @@
 import React from 'react';
 import auth from '../../firebase.init';
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import Loading from './Loading';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 // import useToken from '../../hooks/useToken';
 
 
@@ -16,6 +17,8 @@ const SignUp = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
+
+    const [sendEmailVerification, verifySending, verifyError] = useSendEmailVerification(auth);
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     // const [token] = useToken(gUser || user);
@@ -31,22 +34,17 @@ const SignUp = () => {
         signInError = <p className='text-red-500'>{error?.message || gError?.message}</p>
 
     }
-
-
-
     if (gUser || user) {
         navigate('/home')
-        console.log('inside token', user);
+        // console.log('inside token', user);
 
     }
     const onSubmit = async data => {
-        // console.log(data);
         await createUserWithEmailAndPassword(data.email, data.password);
 
+        sendEmailVerification();
+        toast.success("Verification email send.");
         await updateProfile({ displayName: data.name });
-        // console.log("updated");
-        // navigate('/appointment');
-
 
     }
 
@@ -134,7 +132,7 @@ const SignUp = () => {
 
                     </form>
 
-                    <p className='text-center'>Already have an account <Link to="/signup" className='text-primary'>Login</Link> </p>
+                    <p className='text-center'>Already have an account <Link to="/login" className='text-primary'>Login</Link> </p>
                     <div className='divider'>OR</div>
                     <button
                         onClick={() => signInWithGoogle()}

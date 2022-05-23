@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import auth from '../../firebase.init';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import Loading from './Loading';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -16,6 +16,7 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+
     let signInError;
 
     const navigate = useNavigate();
@@ -26,24 +27,21 @@ const Login = () => {
 
     if (user || gUser) {
         navigate(from, { replace: true });
+
     }
-
-
-
     if (error || gError) {
         signInError = <p className='text-red-500'>{error.message || gError.message}</p>
 
     }
-
     if (loading || gLoading) {
         return <Loading></Loading>
     }
 
     const onSubmit = data => {
         // console.log(data);
+
         signInWithEmailAndPassword(data.email, data.password);
 
-        navigate('/appointment');
 
     }
 
@@ -112,7 +110,8 @@ const Login = () => {
 
                     </form>
 
-                    <p className='text-center'>New to doctors portal <Link to="/signup" className='text-primary'>Create new account</Link> </p>
+                    <p className='text-center'>New to flash electronic <Link to="/signup" className='text-primary'>Create new account</Link> </p>
+
                     <div className='divider'>OR</div>
                     <button
                         onClick={() => signInWithGoogle()}
