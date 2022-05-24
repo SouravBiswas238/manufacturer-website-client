@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SingleCart from './SingleCart';
+import Loading from '../Shered/Loading'
 
 const OurParts = () => {
     const [product, setProduct] = useState([]);
@@ -15,14 +16,17 @@ const OurParts = () => {
     const handelPurchase = (id) => {
         navigate(`/purchase/${id}`);
 
-        // console.log(id);
     }
 
     return (
         <div className='lg:mx-10'>
             <h3 className='text-center text-secondary text-3xl pt-5'>Our Newest Products</h3>
+
+
             <div className='divider'></div>
+
             <div className='grid lg:grid-cols-3 gap-4 sm:px-2'>
+
                 {
                     product.slice(0, 6).map(product => <SingleCart handelPurchase={handelPurchase} key={product._id} product={product}></SingleCart>)
                 }
