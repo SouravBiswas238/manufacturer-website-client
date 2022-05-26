@@ -18,9 +18,9 @@ const PurchaseDetail = () => {
             .then(data => setProduct(data));
     }, []);
 
-    if (loading) {
-        return <Loading></Loading>
-    }
+    // if (loading) {
+    //     return <Loading></Loading>
+    // }
     const handelOpenModal = () => {
         setHandelOpen(true);
     }

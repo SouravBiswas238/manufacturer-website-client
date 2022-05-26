@@ -4,10 +4,10 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWith
 import { useForm } from "react-hook-form";
 import Loading from './Loading';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import useToken from '../../hook/useToken';
 // import useToken from '../../hooks/useToken';
 
 const Login = () => {
-    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
 
     const [
@@ -20,20 +20,19 @@ const Login = () => {
     let signInError;
 
     const navigate = useNavigate();
-    // const [token] = useToken(user || gUser);
+    const [token] = useToken(user);
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
-
-    if (user || gUser) {
+    if (token) {
         navigate(from, { replace: true });
 
     }
-    if (error || gError) {
-        signInError = <p className='text-red-500'>{error.message || gError.message}</p>
+    if (error) {
+        signInError = <p className='text-red-500'>{error.message}</p>
 
     }
-    if (loading || gLoading) {
+    if (loading) {
         return <Loading></Loading>
     }
 
@@ -52,9 +51,9 @@ const Login = () => {
                     <h2 className="text-center text-xl font-bold">Login</h2>
 
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text">Email</span>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Email</span>
                             </label>
                             <input
                                 {...register("email", {
@@ -69,16 +68,16 @@ const Login = () => {
                                     }
                                 })}
                                 type="email" placeholder="Your email"
-                                class="input input-bordered w-full max-w-xs" />
-                            <label class="label">
-                                {errors.email?.type === 'required' && <span class="label-text-alt text-red-500">{errors.email.message}</span>}
-                                {errors.email?.type === 'pattern' && <span class="label-text-alt text-red-500">{errors.email.message}</span>}
+                                className="input input-bordered w-full max-w-xs" />
+                            <label className="label">
+                                {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+                                {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
 
                             </label>
                         </div>
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text">Password</span>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Password</span>
                             </label>
                             <input
                                 {...register("password", {
@@ -93,11 +92,11 @@ const Login = () => {
                                     }
                                 })}
                                 type="password" placeholder="Your Password"
-                                class="input input-bordered w-full max-w-xs" />
-                            <label class="label">
-                                {errors.password?.type === 'required' && <span class="label-text-alt text-red-500">{errors.password.message}</span>}
+                                className="input input-bordered w-full max-w-xs" />
+                            <label className="label">
+                                {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
 
-                                {errors.password?.type === 'minLength' && <span class="label-text-alt text-red-500">
+                                {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">
                                     {errors.password.message}
                                 </span>}
 
@@ -111,11 +110,10 @@ const Login = () => {
                     </form>
 
                     <p className='text-center'>New to flash electronic <Link to="/signup" className='text-primary'>Create new account</Link> </p>
+                    <p className='text-center'>Forgate your password <Link to='/login' className='text-primary'>Reset password</Link> </p>
 
-                    <div className='divider'>OR</div>
-                    <button
-                        onClick={() => signInWithGoogle()}
-                        className='btn btn-outline'>Continue with Google</button>
+
+
 
 
                 </div>

@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import Loading from './Loading';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import useToken from '../../hook/useToken';
 // import useToken from '../../hooks/useToken';
 
 
@@ -20,6 +21,7 @@ const SignUp = () => {
 
     const [sendEmailVerification, verifySending, verifyError] = useSendEmailVerification(auth);
 
+
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     // const [token] = useToken(gUser || user);
 
@@ -27,24 +29,31 @@ const SignUp = () => {
 
     let signInError;
 
-    if (loading || gLoading || updateError) {
-        return <Loading></Loading>
-    }
+
     if (error || gError || updating) {
         signInError = <p className='text-red-500'>{error?.message || gError?.message}</p>
 
     }
-    if (gUser || user) {
-        navigate('/home')
-        // console.log('inside token', user);
+    const [token] = useToken(user || gUser);
+
+    if (token) {
+        navigate('/home');
+
 
     }
+    if (loading || gLoading || updateError || verifySending) {
+        return <Loading></Loading>
+    }
+
     const onSubmit = async data => {
         await createUserWithEmailAndPassword(data.email, data.password);
 
-        sendEmailVerification();
+
         toast.success("Verification email send.");
         await updateProfile({ displayName: data.name });
+
+        sendEmailVerification();
+
 
     }
 
@@ -55,9 +64,9 @@ const SignUp = () => {
                     <h2 className="text-center text-xl font-bold">Sign Up</h2>
 
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text">Name</span>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Name</span>
                             </label>
                             <input
                                 {...register("name", {
@@ -68,15 +77,15 @@ const SignUp = () => {
 
                                 })}
                                 type="text" placeholder="Your Name"
-                                class="input input-bordered w-full max-w-xs" />
-                            <label class="label">
-                                {errors.name?.type === 'required' && <span class="label-text-alt text-red-500">{errors.name.message}</span>}
+                                className="input input-bordered w-full max-w-xs" />
+                            <label className="label">
+                                {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
 
                             </label>
                         </div>
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text">Email</span>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Email</span>
                             </label>
                             <input
                                 {...register("email", {
@@ -91,16 +100,16 @@ const SignUp = () => {
                                     }
                                 })}
                                 type="email" placeholder="Your email"
-                                class="input input-bordered w-full max-w-xs" />
-                            <label class="label">
-                                {errors.email?.type === 'required' && <span class="label-text-alt text-red-500">{errors.email.message}</span>}
-                                {errors.email?.type === 'pattern' && <span class="label-text-alt text-red-500">{errors.email.message}</span>}
+                                className="input input-bordered w-full max-w-xs" />
+                            <label className="label">
+                                {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+                                {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
 
                             </label>
                         </div>
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text">Password</span>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Password</span>
                             </label>
                             <input
                                 {...register("password", {
@@ -115,11 +124,11 @@ const SignUp = () => {
                                     }
                                 })}
                                 type="password" placeholder="Your Password"
-                                class="input input-bordered w-full max-w-xs" />
-                            <label class="label">
-                                {errors.password?.type === 'required' && <span class="label-text-alt text-red-500">{errors.password.message}</span>}
+                                className="input input-bordered w-full max-w-xs" />
+                            <label className="label">
+                                {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
 
-                                {errors.password?.type === 'minLength' && <span class="label-text-alt text-red-500">
+                                {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">
                                     {errors.password.message}
                                 </span>}
 

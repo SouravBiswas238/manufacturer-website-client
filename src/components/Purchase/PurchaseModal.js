@@ -25,13 +25,29 @@ const PurchaseModal = ({ user, product, setHandelOpen }) => {
         }
         // send data to backend
 
-        console.log(order);
+
         if (minOrder > product?.minQuantity || minOrder < product?.available) {
 
-            console.log(event.target.name.value);
+            fetch('http://localhost:5000/order', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json',
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                },
+                body: JSON.stringify(order)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        toast.success(`Successfully Booking Your Order`);
+                    }
+                    else {
+                        toast.error("data already exist");
+                    }
+                })
         }
         else {
-            toast.error("please enter minimun To Maximun quantity");
+            toast.error("Please enter minimun To Maximun quantity");
         }
         setHandelOpen(false);
 
