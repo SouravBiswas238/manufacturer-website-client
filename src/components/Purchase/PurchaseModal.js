@@ -28,7 +28,7 @@ const PurchaseModal = ({ user, product, setHandelOpen }) => {
 
         if (minOrder > product?.minQuantity || minOrder < product?.available) {
 
-            fetch('http://localhost:5000/order', {
+            fetch('https://pacific-fjord-64285.herokuapp.com/order', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',
