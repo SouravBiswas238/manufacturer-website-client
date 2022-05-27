@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQuery } from 'react-query';
-import LoadSingleUser from './LoadSingleUser';
+import LoadSingleUser from '../LoadSingleUser';
 
 const MakeAdmin = () => {
 

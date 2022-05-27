@@ -15,11 +15,12 @@ import Dashboard from './components/Dashboard/Dashboard';
 import MyOrders from './components/Dashboard/MyOrders';
 import AddReview from './components/Dashboard/AddReview';
 import MyProfile from './components/Dashboard/MyProfile';
-import MakeAdmin from './components/Dashboard/MakeAdmin';
 import AddProduct from './components/Dashboard/Admin/AddProduct';
 import ManageAllPro from './components/Dashboard/Admin/ManageAllPro';
 import ManageAllOrder from './components/Dashboard/Admin/ManageAllOrder';
 import MyPortfolio from './components/Home/MyPortfolio';
+import MakeAdmin from './components/Dashboard/Admin/MakeAdmin';
+import Blogs from './components/Home/Blogs';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/my-blogs" element={<Blogs />} />
         <Route path="/portfolio" element={<MyPortfolio />} />
 
         <Route path='/purchase' element={

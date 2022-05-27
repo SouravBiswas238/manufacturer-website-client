@@ -18,8 +18,6 @@ const CustomarReview = () => {
                     reviews.map(review => <SingleReview key={review._id} review={review} ></SingleReview>)
                 }
 
-
-
             </div>
         </div>
     );
