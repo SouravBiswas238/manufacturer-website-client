@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import LoadSingleProduct from './LoadSingleProduct';
 
@@ -14,6 +14,8 @@ const ManageAllPro = () => {
             res.json()
         )
     )
+
+
     return (
         <div>
             <div class="overflow-x-auto">
@@ -35,7 +37,10 @@ const ManageAllPro = () => {
                     </tbody>
                 </table>
             </div>
-        </div>
+
+
+
+        </div >
     );
 };
 

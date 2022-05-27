@@ -17,14 +17,15 @@ const Navbar = () => {
 
     const menuItems = <>
         <li> <Link to="/home">Home</Link></li>
-        <li> <Link to="/about">About</Link></li>
         <li> <Link to="/blogs">Blogs</Link></li>
+        <li> <Link to="/portfolio">My Portfolio</Link></li>
 
         <li> {
             user && <Link to="/dashboard">Dashboard</Link>
         }</li>
+
         <li> {
-            user && <button onClick={handelProfile} className='btn btn-ghost'>{user.displayName}</button>
+            user && <Link to='/dashboard/profile' className='btn btn-ghost'>{user.displayName}</Link>
         }</li>
 
         < li > {

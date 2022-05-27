@@ -1,9 +1,29 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const LoadSingleProduct = ({ index, data, refetch }) => {
 
-    const handelProductDelete = (name) => {
-        console.log(name)
+
+    const handelProductDelete = (id) => {
+
+        const isDelete = window.confirm("Are You want to delete?")
+        if (isDelete) {
+            if (id) {
+                fetch(`http://localhost:5000/product/${id}`, {
+                    method: 'DELETE',
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        toast.success("Successfully DELETED")
+                    })
+
+            }
+        }
+
+
+
+
     }
 
 
@@ -16,7 +36,9 @@ const LoadSingleProduct = ({ index, data, refetch }) => {
             <td>{data?.availAble}</td>
             <td>
 
-                <button onClick={() => handelProductDelete()} className='btn btn-sm btn-outine'>delete</button>
+                <button onClick={() => handelProductDelete(data?._id)} >
+                    <label for="my-modal-6" class="btn modal-button">Delete</label>
+                </button>
             </td>
 
         </tr>
