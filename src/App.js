@@ -17,6 +17,8 @@ import AddReview from './components/Dashboard/AddReview';
 import MyProfile from './components/Dashboard/MyProfile';
 import MakeAdmin from './components/Dashboard/MakeAdmin';
 import AddProduct from './components/Dashboard/AddProduct';
+import ManageAllPro from './components/Dashboard/Admin/ManageAllPro';
+import ManageAllOrder from './components/Dashboard/Admin/ManageAllOrder';
 
 function App() {
   return (
@@ -42,11 +44,13 @@ function App() {
             <Dashboard></Dashboard>
           </RequreAuth>
         }>
-          <Route index element={<MyOrders />}></Route>
+          {/* <Route index element={<Dashboard />}></Route> */}
+
           <Route path='review' element={<AddReview />}></Route>
           <Route path='profile' element={<MyProfile />}></Route>
           <Route path='make-admin' element={<MakeAdmin />}></Route>
-          <Route path='add-product' element={<AddProduct />}></Route>
+          <Route path='manage-product' element={<ManageAllPro />}></Route>
+          <Route path='manage-order' element={<ManageAllOrder />}></Route>
         </Route>
 
         <Route path="/login" element={<Login />} />

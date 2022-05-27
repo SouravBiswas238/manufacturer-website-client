@@ -5,7 +5,7 @@ const CustomarReview = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch('https://pacific-fjord-64285.herokuapp.com/review')
+        fetch('http://localhost:5000/review')
             .then(res => res.json())
             .then(data => setReviews(data));
     }, [])

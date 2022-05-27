@@ -1,11 +1,11 @@
 import React from 'react';
 import { useQuery } from 'react-query';
-import LoadSingleUser from './LoadSingleUser';
+import LoadSingleProduct from './LoadSingleProduct';
 
-const MakeAdmin = () => {
+const ManageAllPro = () => {
 
     const { data, isLoading, error, refetch } = useQuery('repoData', () =>
-        fetch('http://localhost:5000/user', {
+        fetch('http://localhost:5000/product', {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -14,28 +14,24 @@ const MakeAdmin = () => {
             res.json()
         )
     )
-    // console.log(data);
     return (
         <div>
-            <h3>Make admin</h3>
-
-
             <div class="overflow-x-auto">
                 <table class="table w-full">
                     <thead>
                         <tr>
                             <th>sl</th>
                             <th>Name</th>
-                            <th>email</th>
-                            <th>Make admin</th>
-                            <th>Remove User</th>
+                            <th>Price / unit</th>
+                            <th>Available</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        {data?.map((data, index) => <LoadSingleUser
+                        {data?.map((data, index) => <LoadSingleProduct
                             refetch={refetch}
-                            key={data._id} index={index} data={data}></LoadSingleUser>)}
+                            key={data._id} index={index} data={data}></LoadSingleProduct>)}
                     </tbody>
                 </table>
             </div>
@@ -43,4 +39,4 @@ const MakeAdmin = () => {
     );
 };
 
-export default MakeAdmin;
+export default ManageAllPro;

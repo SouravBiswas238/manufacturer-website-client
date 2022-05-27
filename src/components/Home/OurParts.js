@@ -8,7 +8,7 @@ const OurParts = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch('https://pacific-fjord-64285.herokuapp.com/product')
+        fetch('http://localhost:5000/product')
             .then(res => res.json())
             .then(data => setProduct(data));
     }, [])

@@ -8,7 +8,6 @@ const Dashboard = () => {
     const [user] = useAuthState(auth);
 
     const [admin] = useAdmin(user);
-    console.log(admin);
 
     return (
         <div className="drawer drawer-mobile ">
@@ -38,6 +37,8 @@ const Dashboard = () => {
 
                             <li><Link to="/dashboard/make-admin">Make admin</Link></li>
                             <li><Link to="/dashboard/add-product">Add A Product</Link></li>
+                            <li><Link to="/dashboard/manage-product">Manage Products</Link></li>
+                            <li><Link to="/dashboard/manage-order">Manage all Order</Link></li>
 
                         </>
                     }

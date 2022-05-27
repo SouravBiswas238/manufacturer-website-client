@@ -1,12 +1,32 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 
 const AddProduct = () => {
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
     const onSubmit = (data) => {
-        console.log(data)
+        console.log(data);
+
+        if (data) {
+            fetch(`http://localhost:5000/product`, {
+                method: 'POST',
+                headers: {
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`,
+                    'content-type': 'application/json',
+
+                },
+                body: JSON.stringify(data)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    toast.success("Successfully Update Your data")
+                })
+        }
+
+
     }
     return (
         <div>
@@ -45,7 +65,7 @@ const AddProduct = () => {
                         <label className="label">
                             <span className="label-text">MinOrder</span>
                         </label>
-                        <input {...register("minOrder",
+                        <input type="number" {...register("minOrder",
                             { required: true })}
                             className="input input-bordered w-full max-w-xs" />
                         {errors.minOrder && <span className='text-red-500 '>minOrder  is required</span>}
@@ -55,7 +75,7 @@ const AddProduct = () => {
                         <label className="label">
                             <span className="label-text">AvailAble</span>
                         </label>
-                        <input {...register("availAble",
+                        <input type="number" {...register("availAble",
                             { required: true })}
                             className="input input-bordered w-full max-w-xs" />
                         {errors.availAble && <span className='text-red-500 '>availAble  is required</span>}
@@ -66,7 +86,7 @@ const AddProduct = () => {
                         <label className="label">
                             <span className="label-text">Per Unit price</span>
                         </label>
-                        <input {...register("unitPrice",
+                        <input type="number" {...register("unitPrice",
                             { required: true })}
                             className="input input-bordered w-full max-w-xs" />
                         {errors.unitPrice && <span className='text-red-500 '>unitPrice  is required</span>}
