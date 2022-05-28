@@ -10,7 +10,7 @@ const AddProduct = () => {
         console.log(data);
 
         if (data) {
-            fetch(`http://localhost:5000/product`, {
+            fetch(`https://pacific-fjord-64285.herokuapp.com/product`, {
                 method: 'POST',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`,

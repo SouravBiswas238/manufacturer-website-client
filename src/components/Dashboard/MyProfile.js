@@ -19,7 +19,7 @@ const MyProfile = () => {
     const email = user?.email;
     const onSubmit = data => {
         if (email) {
-            fetch(`http://localhost:5000/user/${email}`, {
+            fetch(`https://pacific-fjord-64285.herokuapp.com/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -33,7 +33,7 @@ const MyProfile = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/user/${email}`)
+        fetch(`https://pacific-fjord-64285.herokuapp.com/user/${email}`)
             .then(res => res.json())
             .then(data => setUserDetail(data))
 

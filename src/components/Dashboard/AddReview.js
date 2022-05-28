@@ -10,7 +10,7 @@ const AddReview = () => {
   const addReview = (data) => {
 
     if (data.ratting > 0 && data.ratting < 6) {
-      fetch('http://localhost:5000/review', {
+      fetch('https://pacific-fjord-64285.herokuapp.com/review', {
         method: 'POST',
         headers: {
           'content-type': 'application/json'
