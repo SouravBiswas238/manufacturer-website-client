@@ -53,8 +53,8 @@ const MyPortfolio = () => {
             <div>
                 <div class="carousel carousel-end rounded-box">
                     <div class="carousel-item">
-                        <div class="hero min-screen bg-base-100">
-                            <div class="hero-content max-w-md sm:max-w-xs flex-col lg:flex-row">
+                        <div class="hero   min-screen bg-base-100">
+                            <div class="hero-content   lg:max-w-xl flex-col lg:flex-row">
                                 <img src={web1} class=" lg:h-[400px] w-[350px] lg:w-[250px] sm:w-[400px] max-w-sm rounded-lg shadow-2xl" />
 
                                 <div>
@@ -67,7 +67,7 @@ const MyPortfolio = () => {
                     </div>
                     <div class="carousel-item">
                         <div class="hero min-screen bg-base-200">
-                            <div class="hero-content max-w-md sm:max-w-xs flex-col lg:flex-row">
+                            <div class="hero-content sm:max-w-xs  lg:max-w-xl  flex-col lg:flex-row">
                                 <img src={web2} class="lg:h-[400px]   sm:w-[200px] w-[350px] max-w-sm rounded-lg shadow-2xl" />
                                 <div>
                                     <h1 class="text-3xl font-bold">Bike Directory</h1>
@@ -83,18 +83,21 @@ const MyPortfolio = () => {
                     </div>
                     <div class="carousel-item">
                         <div class="hero min-screen bg-base-100">
-                            <div class="hero-content max-w-md sm:max-w-xs flex-col lg:flex-row">
+                            <div class="hero-content  sm:max-w-xs  lg:max-w-xl  flex-col lg:flex-row">
                                 <img src={web3} class="h-[400px] lg:w-[250px] w-[350px] max-w-sm rounded-lg shadow-2xl" />
 
-                                <div>
+                                <div className=''>
                                     <h1 class="text-xl font-bold">Camera review Website</h1>
                                     <p class="py-6">Your best Camera is Here
-                                        Buy Your First Choice.Here you chose a description and a retting.Also uses of rechart on Investment vs review</p>
+                                        Buy Your First Choice.Here you chose
+                                        a description and a retting.Also uses
+                                        of rechart on Investment vs review</p>
                                     <button onClick={handleCamera} className='btn btn-sm px-5 button-outline'>view website</button>
                                 </div>
                             </div>
                         </div>
                     </div>
+
 
                 </div>
             </div>

@@ -5,7 +5,7 @@ import LoadSingleProduct from './LoadSingleProduct';
 const ManageAllPro = () => {
 
     const { data, isLoading, error, refetch } = useQuery('repoData', () =>
-        fetch('https://pacific-fjord-64285.herokuapp.com/product', {
+        fetch('http://localhost:5000/product', {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

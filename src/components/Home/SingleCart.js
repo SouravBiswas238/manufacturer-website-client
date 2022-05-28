@@ -21,7 +21,7 @@ const SingleCart = ({ product, handelPurchase }) => {
                 <h3>Min Quantity: <span className='text-success'>{product?.minOrder} </span>  </h3>
                 <h3>Available Quantity:<span className='text-success'>{product?.availAble} </span></h3>
                 <div class="card-actions justify-center">
-                    <button onClick={() => handelPurchase(product._id)} className='btn btn-accent btn-sm text-white' >Purchase</button>
+                    <button onClick={() => handelPurchase(product._id)} className=' btn btn-accent btn-sm text-white' >Purchase</button>
                 </div>
             </div>
         </div>

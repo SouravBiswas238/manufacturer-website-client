@@ -9,11 +9,10 @@ const SingleReview = (props) => {
     return (
         <div>
             <div class="carousel-item">
-                <div class="card w-96 bg-base-100 shadow-xl">
+                <div class="card w-96 bg-base-200 shadow-xl hover:animate-pulse ">
 
                     <div class="card-body items-center text-center">
-                        <FontAwesomeIcon icon={faCoffee} />
-                        <FontAwesomeIcon icon={faUserLarge} />
+                        <FontAwesomeIcon className='text-6xl bg-slate-400 p-4 rounded-full ' icon={faUserLarge} />
                         <h2 class="card-title">Customer Ratting: <span className='text-primary'>{ratting}/5</span> </h2>
 
                         <p>{review}</p>
