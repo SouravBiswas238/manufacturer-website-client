@@ -6,7 +6,7 @@ const ManageAllOrder = () => {
 
 
     const { data, isLoading, error, refetch } = useQuery('repoData', () =>
-        fetch('http://localhost:5000/order', {
+        fetch('https://pacific-fjord-64285.herokuapp.com/order', {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`,

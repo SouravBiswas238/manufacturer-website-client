@@ -14,7 +14,7 @@ const MyProfile = () => {
     const onSubmit = data => {
         const email = user?.email;
         if (email) {
-            fetch(`http://localhost:5000/user/${email}`, {
+            fetch(`https://pacific-fjord-64285.herokuapp.com/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
