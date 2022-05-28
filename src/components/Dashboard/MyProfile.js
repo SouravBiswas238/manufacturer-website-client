@@ -42,9 +42,6 @@ const MyProfile = () => {
     return (
         <div>
             <div className="card  bg-base-300">
-                <div className="card-actions justify-end">
-                    <label for="dashBoard-sidebar" class=" mx-2 btn btn-primary btn-sm drawer-button lg:hidden">Open dashboard</label>
-                </div>
 
 
                 <div className='grid lg:grid-cols-2'>

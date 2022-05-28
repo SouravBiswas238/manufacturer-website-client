@@ -11,10 +11,14 @@ const Dashboard = () => {
 
     return (
         <div className="drawer drawer-mobile ">
+
+
             <input id="dashBoard-sidebar" type="checkbox" className="drawer-toggle" />
 
             <div className="drawer-content text-center">
-                <h2 className=' text-2xl font-bold my-5 text-purple-500'>Welcome to Dashboard!</h2>
+                <h2 className=' text-2xl font-bold my-5 text-purple-500'>Welcome to Dashboard!</h2>   <div className="card-actions justify-end">
+                    <label for="dashBoard-sidebar" class=" mx-2 btn btn-primary btn-sm drawer-button lg:hidden">Open dashboard</label>
+                </div>
                 <Outlet></Outlet>
             </div>
 
