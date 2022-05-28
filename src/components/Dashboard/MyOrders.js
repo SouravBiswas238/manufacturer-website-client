@@ -43,9 +43,7 @@ const MyOrders = () => {
         <div>
             <div className="overflow-x-auto  px-3">
 
-                <h3 className='text-3xl text-center text-primary'>This is  <span className='text-purple-500'>{user.displayName}'s </span> product count <span className='text-purple-500'>{myOrder.length}
-
-                </span> </h3>
+                <h3 className='text-3xl text-center text-primary'>This is  <span className='text-purple-500'>{user.displayName}'s </span> product count <span className='text-purple-500'>{myOrder.length} </span> </h3>
                 <table className="table table-zebra lg:w-full">
 
                     <thead>

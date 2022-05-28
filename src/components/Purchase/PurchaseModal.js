@@ -4,12 +4,12 @@ import { toast } from 'react-toastify';
 
 const PurchaseModal = ({ user, product, setHandelOpen }) => {
     const { displayName, email } = user;
-    const { _id, name, minQuantity, } = product;
-
+    const { _id, name, minOrder, availAble } = product;
+    console.log(product);
     // Handel module data
     const handelOrderSubmit = (event) => {
         event.preventDefault();
-        const minOrder = event.target.minOrder.value;
+        const myOrder = event.target.myOrder.value;
         const address = event.target.address.value;
         const phoneNumber = event.target.phone.value;
 
@@ -20,35 +20,44 @@ const PurchaseModal = ({ user, product, setHandelOpen }) => {
             address: address,
             orderName: name,
             phoneNumber: phoneNumber,
-            minOrder: minOrder,
+            myOrder: myOrder,
 
         }
+
+        console.log(myOrder < minOrder);
+        console.log(myOrder, minOrder);
+
+        console.log(availAble > myOrder)
         // send data to backend
-
-
-        if (minOrder > product?.minQuantity || minOrder < product?.available) {
-
-            fetch('http://localhost:5000/order', {
-                method: 'POST',
-                headers: {
-                    'content-type': 'application/json',
-                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-                },
-                body: JSON.stringify(order)
-            })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.success) {
-                        toast.success(`Successfully Booking Your Order`);
-                    }
-                    else {
-                        toast.error("data already exist");
-                    }
+        if (myOrder < minOrder) {
+            if (availAble > myOrder) {
+                fetch('http://localhost:5000/order', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json',
+                        'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                    },
+                    body: JSON.stringify(order)
                 })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.success) {
+                            toast.success(`Successfully Booking Your Order`);
+                        }
+                        else {
+                            toast.error("data already exist");
+                        }
+                    })
+            }
+
+            else {
+                toast.error("Please enter minimun To Maximun quantity");
+            }
         }
         else {
             toast.error("Please enter minimun To Maximun quantity");
         }
+
         setHandelOpen(false);
 
     }
@@ -66,7 +75,7 @@ const PurchaseModal = ({ user, product, setHandelOpen }) => {
                         <input type="email" name="email" disabled value={email || ''} className="input input-bordered w-full max-w-xs" />
                         <input type="text" name="address" required placeholder='Your address' className="input input-bordered w-full max-w-xs" />
                         <input type="number" name="phone" required placeholder="Phone Number" className="input input-bordered w-full max-w-xs" />
-                        <input type="text" name="minOrder" placeholder={`Order minimum ${minQuantity}`} required className="input input-bordered w-full max-w-xs" />
+                        <input type="text" name="myOrder" placeholder={`Order minimum ${minOrder}`} required className="input input-bordered w-full max-w-xs" />
                         <input type="submit" value="Submit" className="btn btn-secondary w-full max-w-xs" />
                     </form>
                 </div>

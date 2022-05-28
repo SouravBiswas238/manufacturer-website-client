@@ -20,19 +20,14 @@ const LoadSingleProduct = ({ index, data, refetch }) => {
 
             }
         }
-
-
-
-
     }
-
 
     return (
 
         <tr>
             <td>{index + 1}</td>
             <td>{data?.name}</td>
-            <td>{data?.unitPrice}</td>
+            <td>{data?.unitPrice} $</td>
             <td>{data?.availAble}</td>
             <td>
 

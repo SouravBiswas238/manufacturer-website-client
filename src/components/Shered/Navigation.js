@@ -1,3 +1,5 @@
+import { faUserLarge } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -27,13 +29,9 @@ const Navbar = () => {
         <li> {
             user && <Link to='/dashboard/profile' className='btn btn-ghost'>{user.displayName}</Link>
         }</li>
-
-
-
-
-
-
     </>
+    const nameLatter = user?.displayName?.charAt(0);
+
     return (
         <div>
 
@@ -60,7 +58,10 @@ const Navbar = () => {
                     <div class="dropdown dropdown-end">
                         <label tabindex="0" class="btn btn-ghost btn-circle avatar">
                             <div class="w-10 rounded-full">
-                                <img src="https://api.lorem.space/image/face?hash=33791" />
+                                {
+                                    user ? (user?.photoURL ? <img src={user?.photoURL} alt='userPhoto' /> : <span class="text-3xl">{nameLatter}</span>) : <FontAwesomeIcon icon={faUserLarge} size='2x' />
+
+                                }
                             </div>
                         </label>
                         <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-primary rounded-box w-52">

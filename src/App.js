@@ -50,7 +50,9 @@ function App() {
         }>
           {/* <Route index element={<Dashboard />}></Route> */}
 
-          <Route path='add-product' element={<AddReview />}></Route>
+          <Route path='review' element={<AddReview />}></Route>
+          <Route path='order' element={<MyOrders />}></Route>
+          <Route path='add-product' element={<AddProduct />}></Route>
           <Route path='profile' element={<MyProfile />}></Route>
           <Route path='make-admin' element={<MakeAdmin />}></Route>
           <Route path='manage-product' element={<ManageAllPro />}></Route>
