@@ -5,7 +5,7 @@ import LoadSingleUser from '../LoadSingleUser';
 const MakeAdmin = () => {
 
     const { data, isLoading, error, refetch } = useQuery('repoData', () =>
-        fetch('https://pacific-fjord-64285.herokuapp.com/user', {
+        fetch('http://localhost:5000/user', {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

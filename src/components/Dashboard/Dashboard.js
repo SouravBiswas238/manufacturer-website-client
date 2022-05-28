@@ -14,7 +14,7 @@ const Dashboard = () => {
             <input id="dashBoard-sidebar" type="checkbox" className="drawer-toggle" />
 
             <div className="drawer-content text-center">
-                <h2 className=' text-2xl font-bold my-5 text-purple-500'>Welcome!</h2>
+                <h2 className=' text-2xl font-bold my-5 text-purple-500'>Welcome to Dashboard!</h2>
                 <Outlet></Outlet>
             </div>
 

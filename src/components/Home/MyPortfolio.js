@@ -50,56 +50,67 @@ const MyPortfolio = () => {
                     </div>
                 </div>
             </div>
-            <div>
-                <div class="carousel carousel-end rounded-box">
-                    <div class="carousel-item">
-                        <div class="hero   min-screen bg-base-100">
-                            <div class="hero-content   lg:max-w-xl flex-col lg:flex-row">
-                                <img src={web1} class=" lg:h-[400px] w-[350px] lg:w-[250px] sm:w-[400px] max-w-sm rounded-lg shadow-2xl" />
 
-                                <div>
-                                    <h1 class="text-2xl font-bold">Sourav Fitness</h1>
-                                    <p class="py-6">It is aportfolio of an Jim trainer.Who offer people in a perticular away. Here i used react-router, react-bootstrap,firebase for authentication,</p>
-                                    <button onClick={handelFitness} className='btn btn-sm px-5 button-outline'>View website</button>
-                                </div>
+            <div class="carousel carousel-center rounded-box">
+
+                <div class="carousel-item">
+                    <div class="card w-96 mx-5 shadow-xl">
+                        <figure>
+                            <img src={web1} alt='web3' />
+                        </figure>
+                        <div class="card-body text-center">
+                            <h1 class="text-2xl font-bold">Sourav Fitness</h1>
+                            <p class="py-6">It is aportfolio of an Jim trainer.Who offer people in a perticular away. Here i used react-router, react-bootstrap,firebase for authentication,</p>
+
+                            <div class="card-actions justify-end">
+                                <button onClick={handelFitness} className='btn btn-sm px-5 button-outline'>View website</button>
+
+
                             </div>
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <div class="hero min-screen bg-base-200">
-                            <div class="hero-content sm:max-w-xs  lg:max-w-xl  flex-col lg:flex-row">
-                                <img src={web2} class="lg:h-[400px]   sm:w-[200px] w-[350px] max-w-sm rounded-lg shadow-2xl" />
-                                <div>
-                                    <h1 class="text-3xl font-bold">Bike Directory</h1>
-                                    <p class="py-6">This is bike directory ,a bike diller website
-                                        bikes can be added in this website,
-                                        a user can delete service
-                                        also add some service and manage
-                                        add quantity and also contact</p>
-                                    <button onClick={handleBike} className='btn btn-sm px-5 button-outline'>view website</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="hero min-screen bg-base-100">
-                            <div class="hero-content  sm:max-w-xs  lg:max-w-xl  flex-col lg:flex-row">
-                                <img src={web3} class="h-[400px] lg:w-[250px] w-[350px] max-w-sm rounded-lg shadow-2xl" />
-
-                                <div className=''>
-                                    <h1 class="text-xl font-bold">Camera review Website</h1>
-                                    <p class="py-6">Your best Camera is Here
-                                        Buy Your First Choice.Here you chose
-                                        a description and a retting.Also uses
-                                        of rechart on Investment vs review</p>
-                                    <button onClick={handleCamera} className='btn btn-sm px-5 button-outline'>view website</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
                 </div>
+                <div class="carousel-item">
+                    <div class="card w-96 mx-5 shadow-xl">
+                        <figure>
+                            <img src={web2} alt='web3' />
+                        </figure>
+                        <div class="card-body text-center">
+                            <h1 class="text-xl font-bold">Bike Directory</h1>
+                            <p class="py-6">This is bike directory ,a bike diller website
+                                bikes can be added in this website,
+                                a user can delete service
+                                also add some service and manage
+                                add quantity and also contact</p>
+
+                            <div class="card-actions justify-end">
+                                <button onClick={handleBike} className='btn btn-sm px-5 button-outline'>view website</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card w-96 mx-5 shadow-xl">
+                        <figure>
+                            <img src={web3} alt='web3' />
+                        </figure>
+                        <div class="card-body text-center">
+                            <h2 class="text-xl font-bold">Camera review Website</h2>
+                            <p >Your best Camera is Here
+                                Buy Your First Choice.Here you chose
+                                a description and a retting.Also uses
+                                of rechart on Investment vs review</p>
+                            <div class="card-actions justify-end">
+                                <button onClick={handleCamera} className='btn btn-sm px-5 button-outline'>view website</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
             </div>
         </div >
     );

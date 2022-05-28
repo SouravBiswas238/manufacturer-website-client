@@ -5,7 +5,6 @@ import { toast } from 'react-toastify';
 const PurchaseModal = ({ user, product, setHandelOpen }) => {
     const { displayName, email } = user;
     const { _id, name, minOrder, availAble } = product;
-    console.log(product);
     // Handel module data
     const handelOrderSubmit = (event) => {
         event.preventDefault();
@@ -24,14 +23,10 @@ const PurchaseModal = ({ user, product, setHandelOpen }) => {
 
         }
 
-        console.log(myOrder < minOrder);
-        console.log(myOrder, minOrder);
-
-        console.log(availAble > myOrder)
         // send data to backend
-        if (myOrder < minOrder) {
+        if (myOrder > minOrder) {
             if (availAble > myOrder) {
-                fetch('https://pacific-fjord-64285.herokuapp.com/order', {
+                fetch('http://localhost:5000/order', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json',

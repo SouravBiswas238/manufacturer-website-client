@@ -5,7 +5,7 @@ const LoadSingleUser = ({ index, data, refetch }) => {
     const { email, role } = data;
 
     const handelMakeAdmin = () => {
-        fetch(`https://pacific-fjord-64285.herokuapp.com/user/admin/${email}`, {
+        fetch(`http://localhost:5000/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -17,21 +17,37 @@ const LoadSingleUser = ({ index, data, refetch }) => {
                 }
                 return res.json()
             })
-
             .then(data => {
                 if (data.modifiedCount > 0) {
                     refetch()
                     toast.success('successfully make an admin')
                 }
                 else {
-
+                    toast.error("Faild to make an admin")
                 }
-
             })
-
-
     }
 
+    // const handelDeleteUser = (id) => {
+    //     fetch(`http://localhost:5000/user/${id}`, {
+    //         method: 'DELETE',
+    //         headers: {
+    //             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+    //         },
+    //     })
+    //         .then(res => {
+    //             return res.json()
+    //         })
+    //         .then(data => {
+    //             if (data.deleteCount > 0) {
+    //                 toast.success('successfully Remuve an admin')
+    //             }
+    //             else {
+    //                 toast.error("Faild to remuve")
+    //             }
+    //             refetch()
+    //         })
+    // }
 
     return (
         <tr>

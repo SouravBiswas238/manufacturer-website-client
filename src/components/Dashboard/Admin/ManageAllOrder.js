@@ -1,12 +1,13 @@
 import React from 'react';
 import { useQuery } from 'react-query';
+import Loading from '../../Shered/Loading';
 import RowOrder from './RowOrder';
 
 const ManageAllOrder = () => {
 
 
     const { data, isLoading, error, refetch } = useQuery('repoData', () =>
-        fetch('https://pacific-fjord-64285.herokuapp.com/order', {
+        fetch('http://localhost:5000/order', {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`,
@@ -15,8 +16,10 @@ const ManageAllOrder = () => {
         }).then(res =>
             res.json()
         )
-
     )
+    if (isLoading) {
+        return <Loading></Loading>
+    }
     return (
         <div>
             <div class="overflow-x-auto">
@@ -25,6 +28,7 @@ const ManageAllOrder = () => {
                         <tr>
                             <th>sl</th>
                             <th>Product Name</th>
+                            <th>email</th>
                             <th>Quantity</th>
                             <th>Shipping</th>
                             <th>Cancel</th>
@@ -32,10 +36,11 @@ const ManageAllOrder = () => {
                     </thead>
 
                     <tbody>
-                        {data?.map((data, index) => <RowOrder
+                        {data?.map((sData, index) => <RowOrder
                             refetch={refetch}
-
-                            key={data._id} index={index} data={data}></RowOrder>)}
+                            key={data._id}
+                            index={index}
+                            sData={sData}></RowOrder>)}
                     </tbody>
 
 

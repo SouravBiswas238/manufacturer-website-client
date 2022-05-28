@@ -10,7 +10,7 @@ const AddReview = () => {
   const addReview = (data) => {
 
     if (data.ratting > 0 && data.ratting < 6) {
-      fetch('https://pacific-fjord-64285.herokuapp.com/review', {
+      fetch('http://localhost:5000/review', {
         method: 'POST',
         headers: {
           'content-type': 'application/json'
@@ -39,7 +39,7 @@ const AddReview = () => {
 
 
           <form onSubmit={handleSubmit(addReview)} >
-            <div className="form-control w-full max-w-xs">
+            <div className="form-control lg:w-96">
               <input
                 {...register("ratting", {
                   required: {
@@ -56,7 +56,7 @@ const AddReview = () => {
 
             </div>
 
-            <div className="form-control w-full max-w-xs">
+            <div className="form-control lg:w-96">
               <input
                 {...register("review", {
                   required: {
@@ -73,7 +73,7 @@ const AddReview = () => {
 
             </div>
 
-            <input className='btn w-full max-w-xs text-white' type="submit" value='Add review' />
+            <input className='btn lg:w-1/2  text-white' type="submit" value='Add review' />
 
           </form>
 
