@@ -19,10 +19,10 @@ In order to buy any product from the website, users need to create an account us
 * Heroku: For server-side hosting.
 
 # Contents about this project:
-Navigation Section : Contain links to navigate through the website.
-Home : Contains Hero Section with the Tools, Stats, Reviews, FAQ, Contact and Footer
-Blogs : Contains question answer for the assignment.
-Admin Panel : Manage Products and Orders Placed by the users
-Dashboard : Contains Several Nested Routes on the basis of admin role and user role
-My Profile : Shows Information of the user
-Error 404 : An Implementation of Error 404 Page
+* Navigation Section : Contain links to navigate through the website.
+* Home : Contains Hero Section with the Tools, Stats, Reviews, FAQ, Contact and Footer
+* Blogs : Contains question answer for the assignment.
+* Admin Panel : Manage Products and Orders Placed by the users
+* Dashboard : Contains Several Nested Routes on the basis of admin role and user role
+* My Profile : Shows Information of the user
+* Error 404 : An Implementation of Error 404 Page
