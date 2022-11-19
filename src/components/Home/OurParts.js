@@ -19,7 +19,7 @@ const OurParts = () => {
     }
 
     return (
-        <div className='lg:mx-10'>
+        <div className='lg:mx-10 bg-slate-300'>
             <h3 className='text-center  text-3xl pt-5'>Our Newest Products</h3>
 
 
