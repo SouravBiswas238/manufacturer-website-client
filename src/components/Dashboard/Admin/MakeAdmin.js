@@ -1,11 +1,11 @@
 import React from 'react';
 import { useQuery } from 'react-query';
-import LoadSingleUser from '../LoadSingleUser';
+import LoadSingleUser from '../User/LoadSingleUser';
 
 const MakeAdmin = () => {
 
     const { data, isLoading, error, refetch } = useQuery('repoData', () =>
-        fetch('https://pacific-fjord-64285.herokuapp.com/user', {
+        fetch('https://manufacturer-website-server-production.up.railway.app/user', {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

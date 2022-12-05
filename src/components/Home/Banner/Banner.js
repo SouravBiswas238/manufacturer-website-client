@@ -4,8 +4,6 @@ import './Banner.css'
 const Banner = () => {
     return (
         <div className='banner-box '>
-
-
             <div className="carousel w-full">
                 <div id="slide1" className="carousel-item relative w-full">
                     {/* <img src="http://demo2.steelthemes.com/induscity/wp-content/uploads/sites/9/2020/02/slide1-h3.jpg" className="w-full" /> */}
@@ -50,12 +48,6 @@ const Banner = () => {
                         <a href="#slide3" className="  my-button-3 hover:bg-[#f7c02d]">❯</a>
                     </div>
                 </div>
-
-
-
-
-
-
             </div>
         </div >
     );

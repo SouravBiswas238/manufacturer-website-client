@@ -2,8 +2,8 @@ import React from 'react';
 import factoryImg from '../../img/JJ.jpg'
 const AboutCompany = () => {
     return (
-        <div className='bg-base-100' >
-            <h2 className='my-5 text-center text-3xl text-accent '> About the company</h2>
+        <div className='relative py-8 px-4 top-[-110px] bg-[url(http://demo2.steelthemes.com/induscity/wp-content/uploads/sites/9/2020/02/icon-area-bg.jpg?id=3907)] text-gray-50' >
+            <h2 className='my-5 text-center text-3xl text-accent pb-5'> About the company</h2>
             <div className='grid lg:grid-cols-2 gap-4 sm:mx-2'>
                 <div>
                     <img className='rounded w-full' src={factoryImg} alt="" />

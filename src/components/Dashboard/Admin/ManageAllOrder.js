@@ -7,7 +7,7 @@ const ManageAllOrder = () => {
 
 
     const { data, isLoading, error, refetch } = useQuery('repoData', () =>
-        fetch('https://pacific-fjord-64285.herokuapp.com/order', {
+        fetch('https://manufacturer-website-server-production.up.railway.app/order', {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`,

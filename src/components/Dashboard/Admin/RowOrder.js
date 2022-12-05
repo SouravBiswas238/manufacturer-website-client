@@ -6,7 +6,7 @@ const RowOrder = ({ index, sData, refetch }) => {
     const handelCancel = (id) => {
         if (window.confirm("are you want to delete?")) {
             if (id) {
-                fetch(`https://pacific-fjord-64285.herokuapp.com/order/${id}`, {
+                fetch(`https://manufacturer-website-server-production.up.railway.app/order/${id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())

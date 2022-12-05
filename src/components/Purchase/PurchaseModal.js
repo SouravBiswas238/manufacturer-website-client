@@ -26,7 +26,7 @@ const PurchaseModal = ({ user, product, setHandelOpen }) => {
         // send data to backend
         if (myOrder > minOrder) {
             if (availAble > myOrder) {
-                fetch('https://pacific-fjord-64285.herokuapp.com/order', {
+                fetch('https://manufacturer-website-server-production.up.railway.app/order', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json',

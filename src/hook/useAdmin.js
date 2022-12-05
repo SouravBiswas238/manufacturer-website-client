@@ -5,7 +5,7 @@ const useAdmin = (user) => {
     useEffect(() => {
         const email = user?.email;
         if (email) {
-            fetch(`https://pacific-fjord-64285.herokuapp.com/user/admin/${email}`, {
+            fetch(`https://manufacturer-website-server-production.up.railway.app/user/admin/${email}`, {
                 method: 'GET',
                 headers: {
                     'content-type': 'application/json',

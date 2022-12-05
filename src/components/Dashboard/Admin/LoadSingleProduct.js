@@ -9,7 +9,7 @@ const LoadSingleProduct = ({ index, data, refetch }) => {
         const isDelete = window.confirm("Are You want to delete?")
         if (isDelete) {
             if (id) {
-                fetch(`https://pacific-fjord-64285.herokuapp.com/product/${id}`, {
+                fetch(`https://manufacturer-website-server-production.up.railway.app/product/${id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())

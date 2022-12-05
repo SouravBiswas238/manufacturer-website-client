@@ -13,7 +13,7 @@ const PurchaseDetail = () => {
     const [handelOpen, setHandelOpen] = useState('');
 
     useEffect(() => {
-        fetch(`https://pacific-fjord-64285.herokuapp.com/product/${purchaseId}`)
+        fetch(`https://manufacturer-website-server-production.up.railway.app/product/${purchaseId}`)
             .then(res => res.json())
             .then(data => setProduct(data));
     }, []);

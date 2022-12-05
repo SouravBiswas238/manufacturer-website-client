@@ -4,7 +4,7 @@ import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useScrollPosition } from '../../../hook/useScrollPosition '
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import './Navigation.css'
 
@@ -24,18 +24,20 @@ const Navbar = () => {
     const handelProfile = () => {
 
     }
+    const active = 'flex items-center px-4  hover:border-b-4 border-[#f7c02d] border-transparent font-semibold text-[15px] text-[#f7c02d] hover:text-[#f7c02d]'
+    const deActive = 'flex items-center px-4  hover:border-b-4 border-[#f7c02d] border-transparent  text-white  font-semibold text-[15px]  hover:text-[#f7c02d]'
 
     const menuItems = <>
-        <li className='flex'> <Link className='flex items-center px-4  hover:border-b-4 border-[#f7c02d] border-transparent text-white font-semibold text-[15px] hover:text-[#f7c02d]' to="/home">Home</Link></li>
-        <li className="flex"> <Link className='flex items-center px-4  hover:border-b-4 border-[#f7c02d] border-transparent text-white font-semibold text-[15px] hover:text-[#f7c02d]' to="/my-blogs">Blogs</Link></li>
-        <li className='flex'> <Link className='flex items-center px-4  hover:border-b-4 border-[#f7c02d] border-transparent text-white font-semibold text-[15px] hover:text-[#f7c02d]' to="/portfolio">My Portfolio</Link></li>
+        <li className='flex'> <NavLink className={({ isActive }) => (isActive ? active : deActive)} to="/home">Home</NavLink></li>
+        <li className="flex"> <NavLink className={({ isActive }) => (isActive ? active : deActive)} to="/my-blogs">Blogs</NavLink></li>
+        <li className='flex'> <NavLink className={({ isActive }) => (isActive ? active : deActive)} to="/portfolio">My Portfolio</NavLink></li>
 
         <li className='flex'> {
-            user && <Link className='flex items-center px-4 hover:border-b-4 border-[#f7c02d] border-transparent text-white font-semibold text-[15px] hover:text-[#f7c02d]' to="/dashboard">Dashboard</Link>
+            user && <NavLink className={({ isActive }) => (isActive ? active : deActive)} to="/dashboard">Dashboard</NavLink>
         }</li>
 
         <li className='flex'> {
-            user && <Link className='flex items-center px-4  hover:border-b-4 border-[#f7c02d] border-transparent text-white font-semibold text-[15px] hover:text-[#f7c02d]' to='/dashboard/profile' >{user.displayName}</Link>
+            user && <NavLink className={({ isActive }) => (isActive ? active : deActive)} to='/dashboard/profile' >{user?.displayName}</NavLink>
         }</li>
     </>
     const nameLatter = user?.displayName?.charAt(0);

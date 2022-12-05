@@ -2,7 +2,7 @@ import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
-import auth from '../../firebase.init';
+import auth from '../../../firebase.init';
 import SingleOrder from './SingleOrder'
 
 const MyOrders = () => {
@@ -15,7 +15,7 @@ const MyOrders = () => {
     const email = user?.email;
 
     useEffect(() => {
-        fetch(`https://pacific-fjord-64285.herokuapp.com/order/${email}`, {
+        fetch(`https://manufacturer-website-server-production.up.railway.app/order/${email}`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
 import { useQuery } from 'react-query';
-import Loading from '../Shered/Loading';
+import Loading from '../../Shered/Loading';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserLarge } from '@fortawesome/free-solid-svg-icons';
+import auth from '../../../firebase.init';
 
 const MyProfile = () => {
     const [user] = useAuthState(auth);
@@ -19,7 +19,7 @@ const MyProfile = () => {
     const email = user?.email;
     const onSubmit = data => {
         if (email) {
-            fetch(`https://pacific-fjord-64285.herokuapp.com/user/${email}`, {
+            fetch(`https://manufacturer-website-server-production.up.railway.app/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -33,7 +33,7 @@ const MyProfile = () => {
     }
 
     useEffect(() => {
-        fetch(`https://pacific-fjord-64285.herokuapp.com/user/${email}`)
+        fetch(`https://manufacturer-website-server-production.up.railway.app/user/${email}`)
             .then(res => res.json())
             .then(data => setUserDetail(data))
 

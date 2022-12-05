@@ -9,7 +9,7 @@ const useToken = user => {
 
         const sUser = { email, name };
         if (email) {
-            fetch('https://pacific-fjord-64285.herokuapp.com/user', {
+            fetch('https://manufacturer-website-server-production.up.railway.app/user', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

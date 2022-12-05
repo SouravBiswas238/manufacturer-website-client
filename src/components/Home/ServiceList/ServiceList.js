@@ -1,16 +1,60 @@
+import { faBuildingColumns, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
 const ServiceList = () => {
     return (
-        <div className="max-w-xs rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100">
-            {/* <img src="https://source.unsplash.com/random/300x300/?2" alt="" className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500" /> */}
-            <div className="flex flex-col justify-between p-6 space-y-8">
-                <div className="space-y-2">
-                    <h2 className="text-3xl font-semibold tracking-wide">Donec lectus leo</h2>
-                    <p className="dark:text-gray-100">Curabitur luctus erat nunc, sed ullamcorper erat vestibulum eget.</p>
+        <div className='relative top-[-110px]'>
+            <section className="py-6 bg-[url(http://demo2.steelthemes.com/induscity/wp-content/uploads/sites/9/2020/02/icon-area-bg.jpg?id=3907)] text-gray-50">
+                <div className="container mx-auto px-4 lg:py-0 sm:p-10">
+                    <div className="grid max-w-md grid-cols-1  px-[150px] mx-auto auto-rows-fr lg:max-w-full gap-2 xl:gap-0 lg:grid-cols-3">
+
+                        <div className="relative my-shadow ease-in-out duration-300 hover:text-[#f7c02d] top-[-30px] hover:scale-125 py-[40px]   text-[#848484] bg-[#1e1e1e] hover:z-[10]  p-3 z-[1] flex flex-col items-center">
+                            <div className="mb-2 mt-3 text-5xl font-bold ease-in-out duration-150  ">
+                                <FontAwesomeIcon icon={faUserPlus} size='1x'></FontAwesomeIcon>
+                            </div>
+                            <h2 className='text-white font-semibold text-[20px]'>We are Professional</h2>
+                            <p className='text-[16px] text-[#848484]'>Engineers</p>
+                            <p className='text-[14px] text-[#848484] text-center mt-2
+                            '>
+                                <span>How all this mistaken idea of denouncing pleasure & praising pain was born.</span>
+                            </p>
+                        </div>
+                        <div className="relative my-shadow ease-in-out duration-300 hover:text-[#f7c02d] top-[-30px] hover:scale-125 scale-y-110 py-[40px]   text-[#848484] bg-[#1e1e1e]  p-3 hover:z-[10] z-[1] flex flex-col items-center">
+                            <div className="mb-2 mt-3 text-5xl font-bold ease-in-out duration-150  ">
+                                <FontAwesomeIcon icon={faBuildingColumns} size='1x'></FontAwesomeIcon>
+                            </div>
+                            <h2 className='text-white font-semibold text-[20px]'>We are Professional</h2>
+                            <p className='text-[16px] text-[#848484]'>Engineers</p>
+                            <p className='text-[14px] text-[#848484] text-center mt-2
+                            '>
+                                <span>How all this mistaken idea of denouncing pleasure & praising pain was born.</span>
+                            </p>
+                        </div>
+
+
+
+                        <div className="relative my-shadow ease-in-out duration-300 hover:text-[#f7c02d] top-[-30px] hover:scale-125 py-[40px]   text-[#848484] bg-[#1e1e1e]  hover:z-[10]  p-3 z-[1] flex flex-col items-center">
+                            <div className="mb-2 mt-3 text-5xl font-bold ease-in-out duration-150  ">
+                                <FontAwesomeIcon icon={faUserPlus} size='1x'></FontAwesomeIcon>
+                            </div>
+                            <h2 className='text-white font-semibold text-[20px]'>We are Professional</h2>
+                            <p className='text-[16px] text-[#848484]'>Engineers</p>
+                            <p className='text-[14px] text-[#848484] text-center mt-2
+                            '>
+                                <span>How all this mistaken idea of denouncing pleasure & praising pain was born.</span>
+                            </p>
+                        </div>
+
+                    </div>
                 </div>
-                <button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-400 dark:text-gray-900">Read more</button>
-            </div>
+                <div className='text-[#fff] text-[24px] m
+                y-5 text-center'>
+                    A high level service provider that recommended to any companies, firms or industries.
+                    <br />
+                    Perfect place for your <a className='underline link-color' href="#">Market Sector</a>
+                </div>
+            </section>
         </div>
     );
 };

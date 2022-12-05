@@ -9,12 +9,15 @@ import ServiceList from './ServiceList/ServiceList';
 
 const Home = () => {
     return (
-        <div>
-            <Banner></Banner>
-            <ServiceList></ServiceList>
+        <div className='bg-black'>
+            <div className='relative'>
 
-            <OurParts></OurParts>
-            <BusinessSumarry></BusinessSumarry>
+                <Banner></Banner>
+                <ServiceList></ServiceList>
+                <OurParts></OurParts>
+            </div>
+
+            {/* <BusinessSumarry></BusinessSumarry> */}
             <AboutCompany></AboutCompany>
             <CustomarReview></CustomarReview>
             <News></News>

@@ -5,7 +5,7 @@ const LoadSingleUser = ({ index, data, refetch }) => {
     const { email, role } = data;
 
     const handelMakeAdmin = () => {
-        fetch(`https://pacific-fjord-64285.herokuapp.com/user/admin/${email}`, {
+        fetch(`https://manufacturer-website-server-production.up.railway.app/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -29,7 +29,7 @@ const LoadSingleUser = ({ index, data, refetch }) => {
     }
 
     // const handelDeleteUser = (id) => {
-    //     fetch(`https://pacific-fjord-64285.herokuapp.com/user/${id}`, {
+    //     fetch(`https://manufacturer-website-server-production.up.railway.app/user/${id}`, {
     //         method: 'DELETE',
     //         headers: {
     //             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
