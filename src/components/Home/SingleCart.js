@@ -14,7 +14,7 @@ const SingleCart = ({ product, handelPurchase }) => {
                 <div className='overflow-hidden'>
                     <img alt="" className="object-cover z-1 ease-in-out duration-300 w-full h-52 hover:scale-105 bg-gray-500" src={product.image} />
                 </div>
-                <div className="flex text-sm cart-class  ease-in-out duration-300 opacity-0   justify-center absolute left-[82px] top-[270px] ">
+                <div className="flex text-sm cart-class  ease-in-out duration-300 opacity-0   justify-center absolute left-[82px] top-[240px] ">
 
                     <button type="button" data-tip="Add" className=" tooltip tooltip-top flex  hover:scale-110 ease-linear duration-300 hover:text-[#f7c02d] items-center px-2 py-0">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-4 h-4 fill-current">
