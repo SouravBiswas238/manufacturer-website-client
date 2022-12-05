@@ -6,7 +6,7 @@ const Banner = () => {
         <div className='banner-box '>
             <div className="carousel w-full">
                 <div id="slide1" className="carousel-item relative w-full">
-                    {/* <img src="http://demo2.steelthemes.com/induscity/wp-content/uploads/sites/9/2020/02/slide1-h3.jpg" className="w-full" /> */}
+
                     <div className='my-banner bg-fixed bg-[url(http://demo2.steelthemes.com/induscity/wp-content/uploads/sites/9/2020/02/slide1-h3.jpg)]'>
 
                         <div className='z-30 text-white absolute  -translate-y-1/2 left-[200px] right-6 top-1/2'>

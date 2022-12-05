@@ -23,7 +23,7 @@ const OurParts = () => {
         <section className="relative top-[-110px] py-6 sm:py-12 bg-gray-800 text-gray-100">
             <div className="container p-1 mx-auto space-y-8">
                 <div className="space-y-2 text-center">
-                    <h2 className="text-3xl font-bold uppercase">Our Market Sector</h2>
+                    <h2 id='market' className="text-3xl font-bold uppercase">Our Market Sector</h2>
                     {/* Tabs */}
                     <div className="flex items-center  flex-wrap  overflow-x-hidden overflow-y-hidden sm:justify-center lg:flex-nowrap bg-gray-800 ">
                         <a rel="noopener noreferrer" href="#item1" className="flex items-center flex-shrink-0 px-5 py-2 border-b-4  active:border-violet-400 active:text-gray-100  text-gray-50 ">Latest</a>

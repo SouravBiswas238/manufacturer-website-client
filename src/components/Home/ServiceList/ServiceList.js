@@ -52,7 +52,7 @@ const ServiceList = () => {
                 y-5 text-center'>
                     A high level service provider that recommended to any companies, firms or industries.
                     <br />
-                    Perfect place for your <a className='underline link-color' href="#">Market Sector</a>
+                    Perfect place for your <a className='underline link-color' href="#market">Market Sector</a>
                 </div>
             </section>
         </div>

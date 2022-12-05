@@ -24,7 +24,7 @@ import Blogs from './components/Home/Blogs';
 
 function App() {
   return (
-    <div className=''>
+    <div className='bg-black'>
       <Navigation></Navigation>
       <Routes>
         <Route path="/" element={<Home />} />

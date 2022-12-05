@@ -12,7 +12,6 @@ const Dashboard = () => {
     return (
         <div className="drawer drawer-mobile ">
 
-
             <input id="dashBoard-sidebar" type="checkbox" className="drawer-toggle" />
 
             <div className="drawer-content text-center">

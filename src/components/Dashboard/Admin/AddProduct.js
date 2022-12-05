@@ -34,9 +34,9 @@ const AddProduct = () => {
 
             <div className='text-center mb-2'>
                 <form className='lg:px-10 mx-5 ' onSubmit={handleSubmit(onSubmit)}>
-                    <div className="form-control w-full max-w-xs">
+                    <div className="form-control w-full max-w-xs ">
                         <label className="label">
-                            <span className="label-text">Name</span>
+                            <span className="label-text text-white">Name</span>
                         </label>
                         <input
                             {...register("name", {
@@ -52,7 +52,7 @@ const AddProduct = () => {
 
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
-                            <span className="label-text">About product</span>
+                            <span className="label-text text-white">About product</span>
                         </label>
                         <input {...register("description",
                             { required: true })}
@@ -63,7 +63,7 @@ const AddProduct = () => {
 
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
-                            <span className="label-text">MinOrder</span>
+                            <span className="label-text text-white">MinOrder</span>
                         </label>
                         <input type="number" {...register("minOrder",
                             { required: true })}
@@ -73,7 +73,7 @@ const AddProduct = () => {
 
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
-                            <span className="label-text">AvailAble</span>
+                            <span className="label-text text-white">AvailAble</span>
                         </label>
                         <input type="number" {...register("availAble",
                             { required: true })}
@@ -84,7 +84,7 @@ const AddProduct = () => {
                     </div>
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
-                            <span className="label-text">Per Unit price</span>
+                            <span className="label-text text-white">Per Unit price</span>
                         </label>
                         <input type="number" {...register("unitPrice",
                             { required: true })}
@@ -95,7 +95,7 @@ const AddProduct = () => {
                     </div>
                     <div className="form-control w-full max-w-xs mb-5">
                         <label className="label">
-                            <span className="label-text">Image Url</span>
+                            <span className="label-text text-white">Image Url</span>
                         </label>
                         <input {...register("image",
                             { required: true })}

@@ -60,11 +60,11 @@ const Navbar = () => {
                     {
                         user ?
                             <button onClick={logOut} className='my-button-2 hover:bg-[#f7c02d] hover:border-0 transition duration-150 ease-in '>Sign Out</button> :
-                            <Link className='my-button-1 hover:bg-transparent' to="/login">Login</Link>
+                            <Link className='my-button-1 hover:bg-transparent hover:text-white' to="/login">Login</Link>
                     }
                 </div>
                 <button className="p-4 lg:hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 dark:text-gray-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6  text-gray-100">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
