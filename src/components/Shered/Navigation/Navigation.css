@@ -69,13 +69,17 @@
     opacity: 2;
     z-index: 200;
     font-weight: 700;
-    transform: translateY(-1rem);
+    transform: translateY(-3rem);
     transform: translateX(1rem);
 
 }
 
 .drawer-animation-uncheck {
 
-    transform: translateX(-20rem);
+    transform: translateX(-30rem);
 
+}
+
+.nav-bar-shadow {
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }

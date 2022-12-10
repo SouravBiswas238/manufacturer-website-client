@@ -1,15 +1,15 @@
 import { Route, Router, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import './App.css';
-import Home from './components/Home/Home';
+import Home from './components/Home/HomeDashboard/Home';
 import Purchase from './components/Purchase/Purchase';
 import PurchaseDetail from './components/Purchase/PurchaseDetail';
 import Footer from './components/Shered/Footer';
-import Login from './components/Shered/Login';
+import Login from './components/Shered/Login/Login';
 import Navigation from './components/Shered/Navigation/Navigation';
 import NorFound from './components/Shered/NorFound';
 import RequreAuth from './components/Shered/RequreAuth';
-import SignUp from './components/Shered/SignUp';
+import SignUp from './components/Shered/SignUp/SignUp';
 import 'react-toastify/dist/ReactToastify.css';
 import Dashboard from './components/Dashboard/User/Dashboard';
 import MyOrders from './components/Dashboard/User/MyOrders';

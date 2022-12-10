@@ -26,10 +26,10 @@ const OurParts = () => {
                     <h2 id='market' className="text-3xl font-bold uppercase">Our Market Sector</h2>
                     {/* Tabs */}
                     <div className="flex items-center  flex-wrap  overflow-x-hidden overflow-y-hidden sm:justify-center lg:flex-nowrap bg-gray-800 ">
-                        <a rel="noopener noreferrer" href="#item1" className="flex items-center flex-shrink-0 px-5 py-2 border-b-4  active:border-violet-400 active:text-gray-100  text-gray-50 ">Latest</a>
-                        <a rel="noopener noreferrer" href="#item2" className="flex items-center flex-shrink-0 px-5 py-2 border-b-4  active:border-violet-400 active:text-gray-100 border-gray-700 hover:text-gray-50 text-gray-400">Corrupti</a>
-                        <a rel="noopener noreferrer" href="#item3" className="flex items-center flex-shrink-0 px-5 py-2 border-b-4  active:border-violet-400 active:text-gray-100 border-gray-700 hover:text-gray-50 text-gray-400 ">Excepturi</a>
-                        <a rel="noopener noreferrer" href="#item4" className="flex items-center flex-shrink-0 px-5 py-2 border-b-4  active:border-violet-400 active:text-gray-100 border-gray-700 hover:text-gray-50 text-gray-400">Consectetur</a>
+                        <a rel="noopener noreferrer" href="#item1" className="flex items-center flex-shrink-0 px-5 py-2 border-b-4  hover:border-violet-400 active:text-gray-100 border-gray-700 hover:text-gray-50 text-gray-400">Latest</a>
+                        <a rel="noopener noreferrer" href="#item2" className="flex items-center flex-shrink-0 px-5 py-2 border-b-4  hover:border-violet-400 active:text-gray-100 border-gray-700 hover:text-gray-50 text-gray-400">Corrupti</a>
+                        <a rel="noopener noreferrer" href="#item3" className="flex items-center flex-shrink-0 px-5 py-2 border-b-4  hover:border-violet-400 active:text-gray-100 border-gray-700 hover:text-gray-50 text-gray-400 ">Excepturi</a>
+                        <a rel="noopener noreferrer" href="#item4" className="flex items-center flex-shrink-0 px-5 py-2 border-b-4  hover:border-violet-400 active:text-gray-100 border-gray-700 hover:text-gray-50 text-gray-400">Consectetur</a>
                     </div>
                 </div>
 

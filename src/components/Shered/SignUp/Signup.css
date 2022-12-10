@@ -1,0 +1,24 @@
+.sign-up-bg {
+    background: url('https://w0.peakpx.com/wallpaper/8/737/HD-wallpaper-dark-gradient-black-shadow.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 90vh;
+    opacity: 1;
+    z-index: 20;
+}
+
+.sign-up-cart {
+    background: url('https://w0.peakpx.com/wallpaper/8/737/HD-wallpaper-dark-gradient-black-shadow.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    /* width: 100%; */
+    height: 90vh;
+    opacity: 1;
+}
+
+.shadow-1 {
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}

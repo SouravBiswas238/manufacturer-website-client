@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
-import auth from '../../firebase.init';
+import auth from '../../../firebase.init';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
-import Loading from './Loading';
+import Loading from '../Loading';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import useToken from '../../hook/useToken';
+import useToken from '../../../hook/useToken';
 // import useToken from '../../hooks/useToken';
+import './Login.css'
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -45,15 +46,15 @@ const Login = () => {
     }
 
     return (
-        <div className='flex justify-center items-center h-screen'>
-            <div className="card w-96 bg-base-100 shadow-xl">
+        <div className='flex justify-center items-center  login-bg '>
+            <div className="card w-96 l shadow-1">
                 <div className="card-body">
-                    <h2 className="text-center text-xl font-bold">Login</h2>
+                    <h2 className="text-center text-xl font-bold text-white">Login</h2>
 
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <div className="form-control w-full max-w-xs">
+                        <div className="form-control w-full max-w-xs ">
                             <label className="label">
-                                <span className="label-text">Email</span>
+                                <span className="label-text text-white">Email</span>
                             </label>
                             <input
                                 {...register("email", {
@@ -77,7 +78,7 @@ const Login = () => {
                         </div>
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
-                                <span className="label-text">Password</span>
+                                <span className="label-text text-white">Password</span>
                             </label>
                             <input
                                 {...register("password", {
@@ -109,8 +110,8 @@ const Login = () => {
 
                     </form>
 
-                    <p className='text-center'>New to flash electronic <Link to="/signup" className='text-primary'>Create new account</Link> </p>
-                    <p className='text-center'>Forgate your password <Link to='/login' className='text-primary'>Reset password</Link> </p>
+                    <p className='text-center text-white'>New to flash electronic <Link to="/signup" className='text-[#f7c02d]'>Create new account</Link> </p>
+                    <p className='text-center text-white'>Forgate your password <Link to='/login' className='text-[#f7c02d]'>Reset password</Link> </p>
 
 
 

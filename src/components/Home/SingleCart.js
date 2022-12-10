@@ -10,11 +10,11 @@ const SingleCart = ({ product, handelPurchase }) => {
     return (
 
         <article className="hover:my-shadow flex flex-col  bg-gray-900">
-            <div className=' relative overflow-hidden ease-in-out duration-300 cart-animation'>
-                <div className='overflow-hidden'>
+            <div className=' relative overflow-hidden ease-in-out duration-300 cart-animation px-2 py-2 rounded'>
+                <div className='overflow-hidden rounded'>
                     <img alt="" className="object-cover z-1 ease-in-out duration-300 w-full h-52 hover:scale-105 bg-gray-500" src={product.image} />
                 </div>
-                <div className="flex text-sm cart-class  ease-in-out duration-300 opacity-0   justify-center absolute left-[82px] top-[240px] ">
+                <div className="flex text-sm cart-class  ease-in-out duration-300 opacity-0   justify-center absolute left-[25%] top-[300px] ">
 
                     <button type="button" data-tip="Add" className=" tooltip tooltip-top flex  hover:scale-110 ease-linear duration-300 hover:text-[#f7c02d] items-center px-2 py-0">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-4 h-4 fill-current">
@@ -30,7 +30,6 @@ const SingleCart = ({ product, handelPurchase }) => {
 
                 </div>
             </div>
-
             <div className="flex flex-col flex-1 px-6 py-4">
 
                 <div className="flex justify-between w-full pb-2 space-x-2">

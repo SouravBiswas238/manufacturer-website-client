@@ -1,12 +1,13 @@
 import React from 'react';
-import auth from '../../firebase.init';
+import auth from '../../../firebase.init';
 import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
-import Loading from './Loading';
+import Loading from '../Loading';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import useToken from '../../hook/useToken';
+import useToken from '../../../hook/useToken';
 // import useToken from '../../hooks/useToken';
+import './Signup.css'
 
 
 const SignUp = () => {
@@ -58,15 +59,15 @@ const SignUp = () => {
     }
 
     return (
-        <div className='flex justify-center items-center h-screen'>
-            <div className="card w-96 bg-base-100 shadow-xl">
+        <div className='flex justify-center items-center  bg-center bg-cover  sign-up-bg'>
+            <div className="card w-96  sign-up-cart  shadow-1 ">
                 <div className="card-body">
-                    <h2 className="text-center text-xl font-bold">Sign Up</h2>
+                    <h2 className="text-center text-xl font-bold text-white">Sign Up</h2>
 
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
-                                <span className="label-text">Name</span>
+                                <span className="label-text text-white">Name</span>
                             </label>
                             <input
                                 {...register("name", {
@@ -85,7 +86,7 @@ const SignUp = () => {
                         </div>
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
-                                <span className="label-text">Email</span>
+                                <span className="label-text text-white">Email</span>
                             </label>
                             <input
                                 {...register("email", {
@@ -109,7 +110,7 @@ const SignUp = () => {
                         </div>
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
-                                <span className="label-text">Password</span>
+                                <span className="label-text text-white">Password</span>
                             </label>
                             <input
                                 {...register("password", {
@@ -141,11 +142,11 @@ const SignUp = () => {
 
                     </form>
 
-                    <p className='text-center'>Already have an account <Link to="/login" className='text-primary'>Login</Link> </p>
-                    <div className='divider'>OR</div>
+                    <p className='text-center text-white'>Already have an account <Link to="/login" className='text-[#f7c02d]'>Login</Link> </p>
+                    <div className='divider text-white'>OR</div>
                     <button
                         onClick={() => signInWithGoogle()}
-                        className='btn btn-outline'>Continue with Google</button>
+                        className='btn btn-outline text-[#f7c02d]'>Continue with Google</button>
 
 
                 </div>
