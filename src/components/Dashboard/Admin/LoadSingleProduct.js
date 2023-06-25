@@ -9,7 +9,7 @@ const LoadSingleProduct = ({ index, data, refetch }) => {
         const isDelete = window.confirm("Are You want to delete?")
         if (isDelete) {
             if (id) {
-                fetch(`https://manufacturer-website-server-production.up.railway.app/product/${id}`, {
+                fetch(`https://flash-electronic-server-souravbiswas238.vercel.app/api/v1/products/${id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())

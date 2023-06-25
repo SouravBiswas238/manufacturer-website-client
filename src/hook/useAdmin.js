@@ -5,7 +5,7 @@ const useAdmin = (user) => {
     useEffect(() => {
         const email = user?.email;
         if (email) {
-            fetch(`https://manufacturer-website-server-production.up.railway.app/user/admin/${email}`, {
+            fetch(`https://flash-electronic-server-souravbiswas238.vercel.app/user/admin/${email}`, {
                 method: 'GET',
                 headers: {
                     'content-type': 'application/json',

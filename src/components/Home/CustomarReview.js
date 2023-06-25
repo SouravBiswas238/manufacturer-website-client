@@ -4,10 +4,11 @@ import SingleReview from './SingleReview';
 const CustomarReview = () => {
     const [reviews, setReviews] = useState([]);
 
+    console.log(reviews)
     useEffect(() => {
-        fetch('https://manufacturer-website-server-production.up.railway.app/review')
+        fetch('https://flash-electronic-server-souravbiswas238.vercel.app/review')
             .then(res => res.json())
-            .then(data => setReviews(data));
+            .then(data => setReviews(data.reviews));
     }, [reviews])
 
     return (

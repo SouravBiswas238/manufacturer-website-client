@@ -13,7 +13,7 @@ const PurchaseDetail = () => {
     const [handelOpen, setHandelOpen] = useState('');
 
     useEffect(() => {
-        fetch(`https://manufacturer-website-server-production.up.railway.app/product/${purchaseId}`)
+        fetch(`https://flash-electronic-server-souravbiswas238.vercel.app/api/v1/products/${purchaseId}`)
             .then(res => res.json())
             .then(data => setProduct(data));
     }, []);

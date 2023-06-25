@@ -5,7 +5,7 @@ const LoadSingleUser = ({ index, data, refetch }) => {
     const { email, role } = data;
 
     const handelMakeAdmin = () => {
-        fetch(`https://manufacturer-website-server-production.up.railway.app/user/admin/${email}`, {
+        fetch(`https://flash-electronic-server-souravbiswas238.vercel.app/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -29,7 +29,7 @@ const LoadSingleUser = ({ index, data, refetch }) => {
     }
 
     // const handelDeleteUser = (id) => {
-    //     fetch(`https://manufacturer-website-server-production.up.railway.app/user/${id}`, {
+    //     fetch(`https://flash-electronic-server-souravbiswas238.vercel.app/user/${id}`, {
     //         method: 'DELETE',
     //         headers: {
     //             'authorization': `Bearer ${localStorage.getItem('accessToken')}`

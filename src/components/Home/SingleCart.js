@@ -9,7 +9,7 @@ const SingleCart = ({ product, handelPurchase }) => {
 
     return (
 
-        <article className="hover:my-shadow flex flex-col  bg-gray-900">
+        <article className="hover:my-shadow flex flex-col  bg-gray-900 h-96">
             <div className=' relative overflow-hidden ease-in-out duration-300 cart-animation px-2 py-2 rounded'>
                 <div className='overflow-hidden rounded'>
                     <img alt="" className="object-cover z-1 ease-in-out duration-300 w-full h-52 hover:scale-105 bg-gray-500" src={product.image} />

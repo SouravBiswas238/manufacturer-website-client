@@ -20,7 +20,6 @@ const Navbar = () => {
         return classes.filter(Boolean).join(' ')
     }
     const scrollPosition = useScrollPosition()
-    console.log(scrollPosition)
 
     const handelProfile = () => {
 

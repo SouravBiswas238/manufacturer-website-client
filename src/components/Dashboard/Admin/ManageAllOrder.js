@@ -7,7 +7,7 @@ const ManageAllOrder = () => {
 
 
     const { data, isLoading, error, refetch } = useQuery('repoData', () =>
-        fetch('https://manufacturer-website-server-production.up.railway.app/order', {
+        fetch('https://flash-electronic-server-souravbiswas238.vercel.app/order', {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`,

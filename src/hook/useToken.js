@@ -9,7 +9,7 @@ const useToken = user => {
 
         const sUser = { email, name };
         if (email) {
-            fetch('https://manufacturer-website-server-production.up.railway.app/user', {
+            fetch('https://flash-electronic-server-souravbiswas238.vercel.app/user', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

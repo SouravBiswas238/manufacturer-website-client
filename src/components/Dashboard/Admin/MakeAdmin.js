@@ -5,7 +5,7 @@ import LoadSingleUser from '../User/LoadSingleUser';
 const MakeAdmin = () => {
 
     const { data, isLoading, error, refetch } = useQuery('repoData', () =>
-        fetch('https://manufacturer-website-server-production.up.railway.app/user', {
+        fetch('https://flash-electronic-server-souravbiswas238.vercel.app/user', {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

@@ -19,7 +19,7 @@ const MyProfile = () => {
     const email = user?.email;
     const onSubmit = data => {
         if (email) {
-            fetch(`https://manufacturer-website-server-production.up.railway.app/user/${email}`, {
+            fetch(`https://flash-electronic-server-souravbiswas238.vercel.app/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -33,7 +33,7 @@ const MyProfile = () => {
     }
 
     useEffect(() => {
-        fetch(`https://manufacturer-website-server-production.up.railway.app/user/${email}`)
+        fetch(`https://flash-electronic-server-souravbiswas238.vercel.app/user/${email}`)
             .then(res => res.json())
             .then(data => setUserDetail(data))
 

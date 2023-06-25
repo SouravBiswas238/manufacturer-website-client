@@ -26,7 +26,7 @@ const PurchaseModal = ({ user, product, setHandelOpen }) => {
         // send data to backend
         if (myOrder > minOrder) {
             if (availAble > myOrder) {
-                fetch('https://manufacturer-website-server-production.up.railway.app/order', {
+                fetch('https://flash-electronic-server-souravbiswas238.vercel.app/order', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json',

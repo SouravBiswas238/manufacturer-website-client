@@ -10,7 +10,7 @@ const AddProduct = () => {
         console.log(data);
 
         if (data) {
-            fetch(`https://manufacturer-website-server-production.up.railway.app/product`, {
+            fetch(`https://flash-electronic-server-souravbiswas238.vercel.app/api/v1/products`, {
                 method: 'POST',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`,

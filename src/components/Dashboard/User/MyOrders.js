@@ -15,7 +15,7 @@ const MyOrders = () => {
     const email = user?.email;
 
     useEffect(() => {
-        fetch(`https://manufacturer-website-server-production.up.railway.app/order/${email}`, {
+        fetch(`https://flash-electronic-server-souravbiswas238.vercel.app/order/${email}`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

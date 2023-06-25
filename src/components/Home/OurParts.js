@@ -4,20 +4,22 @@ import SingleCart from './SingleCart';
 import Loading from '../Shered/Loading'
 
 const OurParts = () => {
-    const [product, setProduct] = useState([]);
-    console.log(product)
+    const [products, setProducts] = useState([]);
+
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch('https://manufacturer-website-server-production.up.railway.app/product')
+        fetch('https://flash-electronic-server-souravbiswas238.vercel.app/api/v1/products')
             .then(res => res.json())
-            .then(data => setProduct(data));
+            .then(data => setProducts(data.data));
     }, [])
 
     const handelPurchase = (id) => {
         navigate(`/purchase/${id}`);
 
     }
+    const randomProducts = products
+        .sort(() => 0.5 - Math.random()) // Shuffle the products array randomly
 
     return (
         <section className="relative top-[-110px] py-6 sm:py-12 bg-gray-800 text-gray-100">
@@ -37,7 +39,7 @@ const OurParts = () => {
 
                     <div id="item1" className="carousel-item w-full grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
                         {
-                            product && product?.slice(0, 8)?.map(product => <SingleCart handelPurchase={handelPurchase} key={product._id} product={product}></SingleCart>)
+                            products && randomProducts?.slice(0, 9)?.map(product => <SingleCart handelPurchase={handelPurchase} key={product._id} product={product}></SingleCart>)
                         }
 
 
@@ -45,19 +47,19 @@ const OurParts = () => {
 
                     <div id="item2" className="carousel-item w-full grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
                         {
-                            product.slice(0, 7).map(product => <SingleCart handelPurchase={handelPurchase} key={product._id} product={product}></SingleCart>)
+                            randomProducts?.slice(2, 10).map(product => <SingleCart handelPurchase={handelPurchase} key={product._id} product={product}></SingleCart>)
                         }
 
                     </div>
                     <div id="item3" className="carousel-item w-full grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
                         {
-                            product.slice(0, 7).map(product => <SingleCart handelPurchase={handelPurchase} key={product._id} product={product}></SingleCart>)
+                            randomProducts?.slice(5, 13).map(product => <SingleCart handelPurchase={handelPurchase} key={product._id} product={product}></SingleCart>)
                         }
 
                     </div>
                     <div id="item4" className="carousel-item w-full grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
                         {
-                            product.slice(0, 7).map(product => <SingleCart handelPurchase={handelPurchase} key={product._id} product={product}></SingleCart>)
+                            randomProducts?.slice(7, 15).map(product => <SingleCart handelPurchase={handelPurchase} key={product._id} product={product}></SingleCart>)
                         }
 
                     </div>
@@ -80,7 +82,7 @@ const OurParts = () => {
         //     <div className='grid lg:grid-cols-3 gap-4 sm:px-2'>
 
         //         {
-        //             product.slice(0, 6).map(product => <SingleCart handelPurchase={handelPurchase} key={product._id} product={product}></SingleCart>)
+        //             products?.slice(0, 6).map(products => <SingleCart handelPurchase={handelPurchase} key={products._id} products={products}></SingleCart>)
         //         }
         //     </div>
 

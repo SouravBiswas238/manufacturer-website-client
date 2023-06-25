@@ -10,7 +10,7 @@ const AddReview = () => {
   const addReview = (data) => {
 
     if (data.ratting > 0 && data.ratting < 6) {
-      fetch('https://manufacturer-website-server-production.up.railway.app/review', {
+      fetch('https://flash-electronic-server-souravbiswas238.vercel.app/review', {
         method: 'POST',
         headers: {
           'content-type': 'application/json'
